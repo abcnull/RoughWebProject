@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--<bean id="cat" class="com.example.ceshi.Cat"></bean>-->
+    <!--<bean id="dog" class="com.example.ceshi.Dog"></bean>-->
+    <!--<bean id="person" class="com.example.ceshi.Person">-->
+        <!--<property name="animal" ref="cat"></property>-->
+    <!--</bean>-->
+
+    <!--用户表的bean-->
+    <bean id="cux_users" class="com.example.transaction.bean.Cux_users"></bean>
+    <!--代办事务的bean-->
+    <bean id="cux_todo_items" class="com.example.transaction.bean.Cux_todo_items"></bean>
+    <!--用户dao操作数据库类,自定义的空构造器-->
+    <bean id="userdao" class="com.example.transaction.dao.UserDao"></bean>
+    <!--代办事务dao操作数据库类-->
+    <bean id="businessdao" class="com.example.transaction.dao.BusinessDao"></bean>
+</beans>

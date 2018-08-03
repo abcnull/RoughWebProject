@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="example">
+    <!--<select id="idName" parameterType="String" resultType="com.example.ceshi.User">-->
+        <!--SELECT * FROM USER WHERE username = #{username};-->
+    <!--</select>-->
+    <select id="selectuser_name" parameterType="String" resultType="com.example.transaction.bean.Cux_users">
+        SELECT * FROM CUX_USERS WHERE user_name = #{user_name};
+    </select>
+    <update id="updateuser_name" parameterType="com.example.transaction.bean.Cux_users">
+        update CUX_USERS
+        <set>
+            user_id = #{user_id},
+            user_name = #{user_name},
+            password = #{password},
+            sex = #{sex},
+            age = #{age},
+            phone_number = #{phone_number},
+            creation_date = #{creation_date},
+            last_update_date = #{last_update_date},
+            comments = #{comments}
+        </set>
+        where user_name = #{user_name}
+    </update>
+    <select id="selectbusiness" parameterType="long" resultType="com.example.transaction.bean.Cux_todo_items">
+        SELECT * FROM CUX_TODO_ITEMS WHERE user_id = #{user_id};
+    </select>
+
+    <insert id="insertbusiness" parameterType="com.example.transaction.bean.Cux_todo_items">
+        insert into CUX_TODO_ITEMS(todo_item_title,comments,priority,creation_date,last_update_date) values(#{todo_item_title},#{comments},#{priority},#{creation_date},#{last_update_date})
+    </insert>
+
+</mapper>

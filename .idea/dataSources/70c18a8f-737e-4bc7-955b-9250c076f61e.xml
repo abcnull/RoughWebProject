@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="db@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.2">
+    <root id="1"/>
+    <schema id="2" parent="1" name="db">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="information_schema"/>
+    <schema id="4" parent="1" name="mydb"/>
+    <schema id="5" parent="1" name="mydb2"/>
+    <schema id="6" parent="1" name="mysql"/>
+    <schema id="7" parent="1" name="performance_schema"/>
+    <schema id="8" parent="1" name="test"/>
+    <table id="9" parent="2" name="cux_todo_items"/>
+    <table id="10" parent="2" name="cux_users"/>
+    <column id="11" parent="9" name="todo_item_id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="12" parent="9" name="user_id">
+      <Position>2</Position>
+      <DataType>bigint(20)|0</DataType>
+    </column>
+    <column id="13" parent="9" name="todo_item_title">
+      <Position>3</Position>
+      <DataType>varchar(250)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="14" parent="9" name="todo_item_content">
+      <Position>4</Position>
+      <DataType>varchar(2000)|0</DataType>
+    </column>
+    <column id="15" parent="9" name="priority">
+      <Position>5</Position>
+      <DataType>varchar(10)|0</DataType>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="16" parent="9" name="creation_date">
+      <Position>6</Position>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+    </column>
+    <column id="17" parent="9" name="last_update_date">
+      <Position>7</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="18" parent="9" name="comments">
+      <Position>8</Position>
+      <DataType>varchar(2000)|0</DataType>
+    </column>
+    <index id="19" parent="9" name="user_id">
+      <ColNames>user_id</ColNames>
+    </index>
+    <key id="20" parent="9" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>todo_item_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="21" parent="9" name="user_id">
+      <ColNames>user_id</ColNames>
+      <RefSchemaName>db</RefSchemaName>
+      <RefTableName>cux_users</RefTableName>
+      <RefColNames>user_id</RefColNames>
+    </foreign-key>
+    <column id="22" parent="10" name="user_id">
+      <Position>1</Position>
+      <Comment>用户ID</Comment>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="23" parent="10" name="user_name">
+      <Position>2</Position>
+      <Comment>用户名称</Comment>
+      <DataType>varchar(250)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="24" parent="10" name="password">
+      <Position>3</Position>
+      <Comment>用户密码</Comment>
+      <DataType>varchar(30)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="25" parent="10" name="sex">
+      <Position>4</Position>
+      <Comment>性别</Comment>
+      <DataType>varchar(1)|0</DataType>
+    </column>
+    <column id="26" parent="10" name="age">
+      <Position>5</Position>
+      <Comment>年龄在1-200之间</Comment>
+      <DataType>bigint(20)|0</DataType>
+    </column>
+    <column id="27" parent="10" name="phone_number">
+      <Position>6</Position>
+      <Comment>电话</Comment>
+      <DataType>varchar(30)|0</DataType>
+    </column>
+    <column id="28" parent="10" name="creation_date">
+      <Position>7</Position>
+      <Comment>创建时间</Comment>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+    </column>
+    <column id="29" parent="10" name="last_update_date">
+      <Position>8</Position>
+      <Comment>更新时间</Comment>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="30" parent="10" name="comments">
+      <Position>9</Position>
+      <Comment>备注</Comment>
+      <DataType>varchar(2000)|0</DataType>
+    </column>
+    <key id="31" parent="10" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>user_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>
