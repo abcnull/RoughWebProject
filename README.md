@@ -1,2 +1,2 @@
-# test
-测试使用
+# RoughWebProject
+This is a very rough web project using SSM for learning web development.
